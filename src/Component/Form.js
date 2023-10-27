@@ -1,12 +1,11 @@
 import React,{useState} from "react"
 import axios from "axios"
-import {useNavigate} from "react-router-dom";
+
 
 
 
 function Register(){
     const arr2=[]
-    const navi=useNavigate();
     const[data,setData]=useState({
         name:"",
         email:"",
@@ -23,15 +22,10 @@ setData({...data,[e.target.name]:e.target.value});
 const handleSubmit=(e)=>{
     e.preventDefault();
 arr2.push(data)
-    if(arr2.lenth!==0){
-        axios.post("http://localhost:4001/api/register",data)
+    
+        axios.post("https://react-handson4-backend.onrender.com/api/register",data)
        .then((res)=>alert(res.data.msg))
        .catch((err)=>console.log(err))
-      navi("/home")
-          }
-          else{
-              alert("enter valide data")
-          }
 
  setData({
     name:"",

@@ -1,12 +1,11 @@
 import React,{useState} from "react"
 import axios from "axios"
 import { NavLink } from "react-router-dom"
-import {useNavigate} from "react-router-dom";
+
 
 
 
 function LogIn(){
-    const navi=useNavigate()
     const arr2=[]
     const[data,setData]=useState({
         
@@ -26,15 +25,11 @@ const handleSubmit=(e)=>{
     e.preventDefault();
     arr2.push(data)
     console.log(arr2)
-    if(arr2.lenth!==0){
-  axios.post("http://localhost:4001/api/login",data)
- .then((res)=>alert(res.data.msg))
+
+  axios.post("https://react-handson4-backend.onrender.com/api/login",data)
+ .then((res)=>console.log("hello"))
  .catch((err)=>console.log(err))
-navi("/home")
-    }
-    else{
-        alert("enter valide data")
-    }
+
 
 
  setData({
