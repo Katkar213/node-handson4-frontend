@@ -1,11 +1,15 @@
 import React,{useState} from "react"
 import axios from "axios"
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 function Register(){
     const arr2=[]
+    const navi=useNavigate();
+
+
     const[data,setData]=useState({
         name:"",
         email:"",
@@ -24,7 +28,10 @@ const handleSubmit=(e)=>{
 arr2.push(data)
     
         axios.post("https://react-handson4-backend.onrender.com/api/register",data)
-       .then((res)=>alert(res.data.msg))
+       .then((res)=>{ 
+        alert(res.data.msg)
+        navi("/login")
+})
        .catch((err)=>console.log(err))
 
  setData({

@@ -1,12 +1,14 @@
 import React,{useState} from "react"
 import axios from "axios"
 import { NavLink } from "react-router-dom"
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 function LogIn(){
     const arr2=[]
+    const navi=useNavigate()
     const[data,setData]=useState({
         
         email:"",
@@ -27,7 +29,13 @@ const handleSubmit=(e)=>{
     console.log(arr2)
 
   axios.post("https://react-handson4-backend.onrender.com/api/login",data)
- .then((res)=>console.log("hello"))
+ .then((res)=>{
+    alert(res.data.msg)
+    console.log(res.data)
+    localStorage.setItem("token",res.data.token)  
+    navi("/home")
+
+})
  .catch((err)=>console.log(err))
 
 
