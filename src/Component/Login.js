@@ -51,16 +51,16 @@ const handleSubmit=(e)=>{
     return(
 
 <div>
-<h1 id="heading">Log in</h1>
+<h2 id="heading">Log in</h2>
 
 
 
 
 
-<label htmlFor="email">Email:  </label>
+<label htmlFor="email"><h1>Email:</h1>  </label>
 <input type="email" name="email" id="email" onChange={handleChange} placeholder="Enter your email" value={data.email}/><br/><br/>
 
-<label id="font" htmlFor="Password"> Password:  </label>
+<label id="font" htmlFor="Password"><h1>Password:</h1>   </label>
 <input type="password" maxLength="8" name="password" id="Password" onChange={handleChange} placeholder="Enter your password" value={data.password}></input><br/><br/>
 
 

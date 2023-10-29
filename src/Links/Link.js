@@ -8,11 +8,12 @@ export default function Links(){
       <>
        
        <BrowserRouter>
-       
-       <NavLink to={"/"}>LogIn</NavLink>
-       <NavLink to={"/register"}>Register</NavLink>
-       <NavLink to={"/home"}>Home</NavLink>
-
+       <div className="navbar">
+       <NavLink id="titlelink" to={"/home"}>Home</NavLink>
+       <NavLink id="titlelink" to={"/"}>LogIn</NavLink>
+       <NavLink id="titlelink" to={"/register"}>Register</NavLink>
+      
+        </div>
        <Routes>
 
         <Route path="/" element={<LogIn/>}/>
