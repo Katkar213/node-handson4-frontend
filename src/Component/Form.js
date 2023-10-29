@@ -30,7 +30,7 @@ arr2.push(data)
         axios.post("https://react-handson4-backend.onrender.com/api/register",data)
        .then((res)=>{ 
         alert(res.data.msg)
-        navi("/login")
+        navi("/")
 })
        .catch((err)=>console.log(err))
 

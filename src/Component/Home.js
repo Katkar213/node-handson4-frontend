@@ -15,7 +15,7 @@ function Home()
     })
     const handleClick=()=>{
         localStorage.removeItem("token")
-        navi("/login")
+        navi("/")
     }
     
     return(
