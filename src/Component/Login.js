@@ -37,7 +37,7 @@ const handleSubmit=(e)=>{
      }
      else{
 navi("/")
-})
+}})
  .catch((err)=>console.log(err))
 
  setData({
