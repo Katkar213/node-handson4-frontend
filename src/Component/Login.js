@@ -31,7 +31,11 @@ const handleSubmit=(e)=>{
   axios.post("https://react-handson4-backend.onrender.com/api/login",data)
  .then((res)=>{
     alert(res.data.msg)
+     if(res.data.token){
     navi("/home")
+     }
+     else{
+navi("/")
 })
  .catch((err)=>console.log(err))
 
