@@ -29,7 +29,7 @@ arr2.push(data)
        .then((res)=>{
         alert(res.data.msg)
          localStorage.setItem("token",res.data.token) 
-         navi("/login") 
+         navi("/") 
 
     }
         )
